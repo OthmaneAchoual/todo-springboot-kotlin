@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="run()">
+<script>
+    function run() {
+        const ws = new WebSocket("ws://localhost:9090/ws/hello")
+        ws.onmessage = function(msg) {
+            console.log("message: " + msg.data.toString());
+        }
+    }
+</script>
+</body>
+</html>
